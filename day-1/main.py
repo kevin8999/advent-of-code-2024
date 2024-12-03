@@ -1,6 +1,5 @@
-import os
-
-def main():
+def part_1():
+    # Order data in columns 1 and 2 of input.txt and output the sum of the distances between them
     file = open("input.txt")
     contents = file.readlines()
     file.close()
@@ -21,5 +20,17 @@ def main():
 
     print(sum(distance))
 
+    return l1, l2
+
+def part_2(l1, l2):
+    # Calculate a similarity score in input.txt
+    similarity_score = 0
+
+    for i, x in enumerate(l1):
+        similarity_score += x * l2.count(x)
+
+    print(similarity_score)
+
 if __name__ == '__main__':
-    main()
+    l1, l2 = part_1()
+    part_2(l1, l2)
