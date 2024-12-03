@@ -3,6 +3,7 @@ import os
 def main():
     file = open("input.txt")
     contents = file.readlines()
+    file.close()
     
     contents = [line.split() for line in contents]
     
